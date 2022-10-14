@@ -80,6 +80,7 @@ public class CustomerServices {
         }
     }
 
+    @Transactional
     public String resendOtp(@NotNull Models models) {
         int Otp = generateOtp();
         boolean status = getStatus(models.getEmail());

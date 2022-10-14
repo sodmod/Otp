@@ -28,8 +28,10 @@ public class CustomerEntity {
             generator = "customer_sequence"
     )
     private Long Id;
+
     @Column(unique = true)
     private String email;
+
     @Column
     private int Otp;
 
@@ -41,8 +43,6 @@ public class CustomerEntity {
     private LocalDateTime confirmedAt;
     @Column
     private boolean status;
-
-
 
     public CustomerEntity(String email, int Otp, LocalDateTime createdAt, LocalDateTime expiresAt, boolean status){
         this.email = email;

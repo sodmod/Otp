@@ -36,7 +36,7 @@ public interface CustomerRepository extends JpaRepository<CustomerEntity, Long> 
     void findByConfirmedAt(@NotNull LocalDateTime confirmedAt, @NotNull String email);
 
     @Modifying
-    @Query(value = "update ce.otp Customer_Entity ce set ce.otp =?1 where email = ?2 and ce.status = false", nativeQuery = true)
+    @Query(value = "update Customer_Entity set otp =?1 where email = ?2", nativeQuery = true)
     void updateOtp(int otp, @NotNull String email);
 
 }
